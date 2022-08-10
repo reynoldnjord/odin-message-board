@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+  header 
+    h1= "Message Board"
+    p= "Add Message"
+  main 
+    section.form-container 
+      form(method="POST", action="/new")
+        input(type="text", placeholder="Author", name="user", id="user")
+        input(type="text", placeholder="Message", name="text", id="text")
+        button(type="submit", id="submit-button")= "Post"

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  script. 
+    function move() {
+      window.location.href= '/new'
+    }
+  header
+    h1= title
+    p Welcome to #{title}
+  main 
+    .button-container 
+      button(onclick=`move()`).compose="+Add Message"
+      each message in messages 
+        h2=message.text
+        p.user=message.user 
+        p.date= message.date 
